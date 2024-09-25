@@ -1,0 +1,19 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "SerenityTech • All posts by \"证书\" tag",
+    "description": "dedicated to web and mobile security research.",
+    "home_page_url": "https://SerenityTech.github.io",
+    "items": [
+        {
+            "id": "https://serenitytech.github.io/posts/42317",
+            "url": "https://serenitytech.github.io/posts/42317",
+            "title": "android证书安装与校验相关解决办法",
+            "date_published": "2024-09-16T13:31:36.000Z",
+            "content_html": "<h1 id=\"Android安装证书\"><a href=\"#Android安装证书\" class=\"headerlink\" title=\"Android安装证书\"></a>Android安装证书</h1><h2 id=\"Magisk安装证书插件（推荐）\"><a href=\"#Magisk安装证书插件（推荐）\" class=\"headerlink\" title=\"Magisk安装证书插件（推荐）\"></a>Magisk安装证书插件（推荐）</h2><p>Magisk 中安装插件并<strong>重启</strong>，在手机<strong>设置</strong>安全中<strong>正常手动安装</strong>证书至<strong>用户证书</strong>，接着<strong>重启</strong>手机用户证书则会<strong>移动至系统</strong>证书。</p>\n<p><a href=\"https://www.yuque.com/attachments/yuque/0/2024/zip/26634545/1726493495910-39b6677d-7e52-45cb-b681-d1cab1a9eb6b.zip\">Move_Certificates-v1.9.zip</a></p>\n<h2 id=\"Shell命令安装\"><a href=\"#Shell命令安装\" class=\"headerlink\" title=\"Shell命令安装\"></a>Shell命令安装</h2><p><strong>操作证书相关命令</strong>（kali自带openssl）</p>\n<figure class=\"highlight shell\"><table><tr><td class=\"gutter\"><pre><span class=\"line\">1</span><br><span class=\"line\">2</span><br><span class=\"line\">3</span><br><span class=\"line\">4</span><br><span class=\"line\">5</span><br><span class=\"line\">6</span><br><span class=\"line\">7</span><br><span class=\"line\">8</span><br><span class=\"line\">9</span><br><span class=\"line\">10</span><br></pre></td><td class=\"code\"><pre><span class=\"line\"><span class=\"meta prompt_\"># </span><span class=\"language-bash\">查看crt\\der格式证书</span></span><br><span class=\"line\">openssl x509 -in FiddlerRoot.crt -inform DER -noout -text</span><br><span class=\"line\"><span class=\"meta prompt_\"># </span><span class=\"language-bash\">查看pem证书</span></span><br><span class=\"line\">openssl x509 -in certificate.pem -inform pem -noout -text</span><br><span class=\"line\"><span class=\"meta prompt_\"># </span><span class=\"language-bash\">crt/der转pem</span></span><br><span class=\"line\">openssl x509 -in FiddlerRoot.crt -inform DER -out certificate.pem -outform PEM</span><br><span class=\"line\"><span class=\"meta prompt_\"># </span><span class=\"language-bash\">pem转der/crt</span></span><br><span class=\"line\">openssl x509 -in certificate.pem -inform PEM -out FiddlerRoot.der -outform DER</span><br><span class=\"line\"><span class=\"meta prompt_\"># </span><span class=\"language-bash\">计算pem证书<span class=\"built_in\">hash</span>值</span></span><br><span class=\"line\">openssl x509 -subject_hash_old -in Desktop.pem</span><br></pre></td></tr></table></figure>\n\n<p>导入到系统前需要<strong>重命名</strong>证书 <strong>hash值.0 -&gt; xxxx.0</strong>。如果存在文件名<strong>冲突</strong>，则可将<code>.0</code>改为<code>.1</code>或<code>.2</code>等等。</p>\n<p><strong>新开</strong>一个<code>cmd</code>执行以下命令</p>\n<blockquote>\n<p><strong>hash</strong>值通过<strong>pem</strong>证书计算得到（上面最后一条指令）</p>\n</blockquote>\n<figure class=\"highlight shell\"><table><tr><td class=\"gutter\"><pre><span class=\"line\">1</span><br><span class=\"line\">2</span><br><span class=\"line\">3</span><br><span class=\"line\">4</span><br><span class=\"line\">5</span><br><span class=\"line\">6</span><br><span class=\"line\">7</span><br></pre></td><td class=\"code\"><pre><span class=\"line\">adb root</span><br><span class=\"line\">adb remount</span><br><span class=\"line\">adb push xxxxxxx.0 /system/etc/security/cacerts/</span><br><span class=\"line\">adb shell</span><br><span class=\"line\">cd /system/etc/security/cacerts/</span><br><span class=\"line\">chmod 644 xxxxxxx.0</span><br><span class=\"line\">reboot</span><br></pre></td></tr></table></figure>\n\n",
+            "tags": [
+                "magisk",
+                "证书"
+            ]
+        }
+    ]
+}
