@@ -1,0 +1,16 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "SerenityTech",
+    "description": "dedicated to web and mobile security research.",
+    "home_page_url": "https://SerenityTech.github.io",
+    "items": [
+        {
+            "id": "https://serenitytech.github.io/posts/43921",
+            "url": "https://serenitytech.github.io/posts/43921",
+            "title": "arch 打包",
+            "date_published": "2025-03-11T06:29:40.000Z",
+            "content_html": "",
+            "tags": []
+        }
+    ]
+}

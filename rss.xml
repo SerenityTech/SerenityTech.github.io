@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>SerenityTech</title>
+        <link>https://SerenityTech.github.io</link>
+        <description>dedicated to web and mobile security research.</description>
+        <language>zh-CN</language>
+        <pubDate>Tue, 11 Mar 2025 06:29:40 +0000</pubDate>
+        <lastBuildDate>Tue, 11 Mar 2025 06:29:40 +0000</lastBuildDate>
+        <item>
+            <guid isPermalink="true">https://serenitytech.github.io/posts/43921</guid>
+            <title>arch 打包</title>
+            <link>https://serenitytech.github.io/posts/43921</link>
+            <pubDate>Tue, 11 Mar 2025 06:29:40 +0000</pubDate>
+            <description><![CDATA[  ]]></description>
+        </item>
+    </channel>
+</rss>

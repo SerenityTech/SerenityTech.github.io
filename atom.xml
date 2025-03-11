@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://SerenityTech.github.io</id>
+    <title>SerenityTech</title>
+    <link href="https://SerenityTech.github.io" />
+    <updated>2025-03-11T06:29:40.000Z</updated>
+    <entry>
+        <id>https://serenitytech.github.io/posts/43921</id>
+        <title>arch 打包</title>
+        <link rel="alternate" href="https://serenitytech.github.io/posts/43921"/>
+        <content type="html"></content>
+        <updated>2025-03-11T06:29:40.000Z</updated>
+    </entry>
+</feed>
